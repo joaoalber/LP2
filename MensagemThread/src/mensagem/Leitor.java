@@ -5,8 +5,8 @@ public class Leitor {
     Mensagem mensagem;
 
     public void ler(Mensagem mensagem) {
-        
-        System.out.println(mensagem.lerMensagem());
+        this.mensagem = mensagem;
+        System.out.println(this.mensagem.lerMensagem());
     }
     
 }
