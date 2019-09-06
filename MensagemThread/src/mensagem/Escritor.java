@@ -1,24 +1,26 @@
 package mensagem;
 
+import java.util.ArrayList;
+
+
 public class Escritor extends Thread {
 
-    String mensagem;
-    Leitor leitor;
+    Mensagem mensagem;
+    ArrayList lista;
     
-    public Escritor(String mensagem, Leitor leitor) {
+    public Escritor(Mensagem mensagem, ArrayList lista) {
         this.mensagem = mensagem;
-        this.leitor = leitor;
+        this.lista = lista;
     }
     
     public void run() {
         
-        Mensagem msg = new Mensagem();
-        
-        
         try {
-            if (!msg.existeMensagem()) {
-                msg.armazenaMensagem(mensagem);
-                leitor.ler(msg);
+            
+            for (int i = 0; i < lista.size(); i++) {
+                this.mensagem.armazenaMensagem(lista.get(i).toString());
+               
+          
             }
         } catch (Exception e) {
             System.out.println("Error");
