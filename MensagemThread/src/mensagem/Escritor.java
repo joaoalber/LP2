@@ -13,12 +13,12 @@ public class Escritor extends Thread {
     public void run() {
         
         Mensagem msg = new Mensagem();
-        msg.armazenaMensagem(mensagem);
-        leitor.ler(msg);
+        
         
         try {
             if (!msg.existeMensagem()) {
                 msg.armazenaMensagem(mensagem);
+                leitor.ler(msg);
             }
         } catch (Exception e) {
             System.out.println("Error");
